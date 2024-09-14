@@ -33,7 +33,7 @@ declare interface MapProps {
   onMapReady?: () => void;
 }
 
-declare interface Ride {
+declare interface Trip {
   origin_address: string;
   destination_address: string;
   origin_latitude: number;
@@ -66,7 +66,7 @@ declare interface GoogleInputProps {
   icon?: string;
   initialLocation?: string;
   containerStyle?: string;
-  textInputBackgroundColor?: string;
+  textInputBGColor?: string;
   handlePress: ({
     latitude,
     longitude,
