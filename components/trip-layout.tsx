@@ -6,7 +6,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Map from "./map";
 import { useRef } from "react";
-import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
+import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 
 const TripLayout = ({
   title,
@@ -39,10 +39,14 @@ const TripLayout = ({
           <Map />
         </View>
 
-        <BottomSheet ref={bottomSheetRef} snapPoints={["40%", "80%"]}>
-          <BottomSheetScrollView style={{ flex: 1, padding: 20 }}>
+        <BottomSheet
+          keyboardBehavior="extend"
+          ref={bottomSheetRef}
+          snapPoints={["40%", "80%"]}
+        >
+          <BottomSheetView style={{ flex: 1, padding: 20 }}>
             {children}
-          </BottomSheetScrollView>
+          </BottomSheetView>
         </BottomSheet>
       </View>
     </GestureHandlerRootView>

@@ -42,6 +42,7 @@ const FindTrip = () => {
       <CustomButton
         title="Find Trip"
         onPress={() => router.push("/(root)/confirm-trip")}
+        className="mt-5"
       />
     </TripLayout>
   );

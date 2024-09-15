@@ -7,8 +7,8 @@ const Layout = () => {
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="find-trip" options={{ headerShown: false }} />
-      {/* <Stack.Screen name="confirm-trip" options={{ headerShown: false }} />
-      <Stack.Screen name="book-trip" options={{ headerShown: false }} /> */}
+      <Stack.Screen name="confirm-trip" options={{ headerShown: false }} />
+      {/* <Stack.Screen name="book-trip" options={{ headerShown: false }} /> */}
     </Stack>
   );
 };
