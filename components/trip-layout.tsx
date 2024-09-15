@@ -11,9 +11,11 @@ import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 const TripLayout = ({
   title,
   children,
+  snapPoints,
 }: {
   title: string;
   children: React.ReactNode;
+  snapPoints?: string[];
 }) => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
@@ -42,7 +44,7 @@ const TripLayout = ({
         <BottomSheet
           keyboardBehavior="extend"
           ref={bottomSheetRef}
-          snapPoints={["40%", "80%"]}
+          snapPoints={snapPoints || ["40%", "80%"]}
         >
           <BottomSheetView style={{ flex: 1, padding: 20 }}>
             {children}

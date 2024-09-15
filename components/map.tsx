@@ -54,7 +54,7 @@ const drivers = [
 ];
 
 const Map = () => {
-  const { selectedDriver, setDriver } = useDriverStore();
+  const { selectedDriver, setDrivers } = useDriverStore();
   const [markers, setMarkers] = useState<MarkerData[]>([]);
   const {
     userLongitude,
@@ -70,6 +70,8 @@ const Map = () => {
   });
 
   useEffect(() => {
+    setDrivers(drivers);
+
     if (Array.isArray(drivers)) {
       if (!userLatitude || !userLongitude) return;
 
