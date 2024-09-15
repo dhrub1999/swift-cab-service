@@ -16,6 +16,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { router } from "expo-router";
 
 const recentTrips = [
   {
@@ -146,8 +147,10 @@ export default function Page() {
       });
 
       setUserLocation({
-        latitude: location.coords.latitude!,
-        longitude: location.coords.longitude!,
+        // latitude: location.coords.latitude!,
+        // longitude: location.coords.longitude!,
+        latitude: 22.73389737137439,
+        longitude: 88.32784656031,
         address: `${address[0].name}, ${address[0].region}`,
       });
     };
@@ -156,10 +159,18 @@ export default function Page() {
   }, []);
 
   const handleSignOut = () => {};
-  const handleTripDestinationPress = () => {};
+  const handleTripDestinationPress = (location: {
+    latitude: number;
+    longitude: number;
+    address: string;
+  }) => {
+    setDestinationLocation(location);
+
+    router.push("/(root)/find-trip");
+  };
 
   return (
-    <SafeAreaView className="bg-general-500">
+    <SafeAreaView className="bg-general-500 px-6">
       <FlatList
         data={recentTrips.slice(0, 5)}
         keyboardShouldPersistTaps="handled"
